@@ -4,7 +4,7 @@ import {
   type Reducer,
   type EnhancedStore,
 } from "@reduxjs/toolkit";
-import { readable, writable, type Readable } from "svelte/store";
+import { readable, type Readable } from "svelte/store";
 import appReducer from "./reducers/appReducer";
 
 interface RootState {
@@ -40,8 +40,3 @@ const bindReduxStore = <T extends EnhancedStore<any, any, any>>(
 };
 
 export const store = bindReduxStore(reduxStore);
-
-export const globalPollingEnabled = writable(true);
-
-export default reduxStore;
-export type { RootState };
